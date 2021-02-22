@@ -422,6 +422,7 @@ def main(args):
 
 
 if __name__ == "__main__":
+    print('Started.....')
     parser = argparse.ArgumentParser()
     parser.add_argument("--snpEff_jar", default=None, required=False,
                         help="path of local snpEff jar")
