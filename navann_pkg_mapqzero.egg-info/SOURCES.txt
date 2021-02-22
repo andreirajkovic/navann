@@ -1,7 +1,0 @@
-README.md
-setup.py
-navann_pkg_mapqzero.egg-info/PKG-INFO
-navann_pkg_mapqzero.egg-info/SOURCES.txt
-navann_pkg_mapqzero.egg-info/dependency_links.txt
-navann_pkg_mapqzero.egg-info/entry_points.txt
-navann_pkg_mapqzero.egg-info/top_level.txt
