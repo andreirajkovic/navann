@@ -1,4 +1,5 @@
 pandas==1.1.1
--e git://github.com/deadpixi/contracts.git
+dpcontracts @ git://github.com/deadpixi/contracts.git#egg=dpcontracts
 hypothesis==6.3.0
 numpy==1.19.1
+requests=2.24.0
