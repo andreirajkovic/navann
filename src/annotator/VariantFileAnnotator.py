@@ -337,10 +337,38 @@ def extract_vcf_header(vcf_path: str, outpath: str):
                 return header, fout
 
 
-def main(args):
+def main():
     """
     Handles the execution of the code
     """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--snpEff_jar", default=None, required=False,
+                        help="path of local snpEff jar")
+    parser.add_argument("--vcf", type=str, required=True,
+                        help="path of vcf to annotate")
+    parser.add_argument("--outpath", type=str,
+                        help="path to write out the vcf")
+    parser.add_argument('--ver', default='GRCh37.75', required=False,
+                        help='genome assembly')
+    parser.add_argument("--all", required=False, action='store_true',
+                        help='run all the annotations')
+    parser.add_argument("--var_eff", required=False, action='store_true',
+                        help='parse variant effect')
+    parser.add_argument("--total_depth", required=False, action='store_true',
+                        help='compute total depth for variants')
+    parser.add_argument("--alt_depth", required=False, action='store_true',
+                        help='compute alt depth for variants')
+    parser.add_argument("--vaf", required=False, action='store_true',
+                        help='compute vaf')
+    parser.add_argument("--allele_freq", required=False, action='store_true',
+                        help='ExaAC allele_frequency')
+    parser.add_argument("--var_type", required=False, action='store_true',
+                        help='annotate variant type')
+    parser.add_argument("--verbose", required=False, action='store_true',
+                        help='enable verbose output')
+    parser.add_argument("--simple_output", required=False, default=None,
+                        help='outpath for simplified report of data')
+    args = parser.parse_args()    
     if args.verbose:
         def verboseprint(message):
             print(message)
@@ -423,32 +451,4 @@ def main(args):
 
 if __name__ == "__main__":
     print('Started.....')
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--snpEff_jar", default=None, required=False,
-                        help="path of local snpEff jar")
-    parser.add_argument("--vcf", type=str, required=True,
-                        help="path of vcf to annotate")
-    parser.add_argument("--outpath", type=str,
-                        help="path to write out the vcf")
-    parser.add_argument('--ver', default='GRCh37.75', required=False,
-                        help='genome assembly')
-    parser.add_argument("--all", required=False, action='store_true',
-                        help='run all the annotations')
-    parser.add_argument("--var_eff", required=False, action='store_true',
-                        help='parse variant effect')
-    parser.add_argument("--total_depth", required=False, action='store_true',
-                        help='compute total depth for variants')
-    parser.add_argument("--alt_depth", required=False, action='store_true',
-                        help='compute alt depth for variants')
-    parser.add_argument("--vaf", required=False, action='store_true',
-                        help='compute vaf')
-    parser.add_argument("--allele_freq", required=False, action='store_true',
-                        help='ExaAC allele_frequency')
-    parser.add_argument("--var_type", required=False, action='store_true',
-                        help='annotate variant type')
-    parser.add_argument("--verbose", required=False, action='store_true',
-                        help='enable verbose output')
-    parser.add_argument("--simple_output", required=False, default=None,
-                        help='outpath for simplified report of data')
-    args = parser.parse_args()
-    main(args)
+    main()
