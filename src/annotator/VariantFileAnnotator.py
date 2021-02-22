@@ -446,7 +446,7 @@ def main():
         if args.var_type or args.all:
             simple_df['TYPE'] = vcf_pd.INFO.str.extract('TYPE=(.*?);')
             verboseprint(f"added variant type to {args.simple_output}")
-    simple_df.to_csv(args.simple_output, index=False)
+        simple_df.to_csv(args.simple_output, index=False)
 
 
 if __name__ == "__main__":
