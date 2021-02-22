@@ -48,11 +48,11 @@ A simple tool to annotate one's vcf.
 
 Example command to run the annotator script with all annotation functions:
 
-`NAVANN --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --all`
+`navann --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --all`
 
 Run the annotator script with only adding vaf to the format field:
 
-`NAVANN --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --vaf`
+`navann --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --vaf`
 
 
 ## 1.7. Authors

@@ -22,7 +22,7 @@ setup(
     python_requires='>=3.6',
     entry_points={
         'console_scripts': [
-            'NAVANN = src.annotator.VariantFileAnnotator:main',
+            'navann = src.annotator.VariantFileAnnotator:main',
         ],
     },    
 )
