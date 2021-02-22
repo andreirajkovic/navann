@@ -50,9 +50,9 @@ Example command to run the annotator script with all annotation functions:
 
 `navann --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --all`
 
-Run the annotator script with only adding vaf to the format field:
+Run the annotator script, but output a csv with the fields of interest:
 
-`navann --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --vaf`
+`navann --vcf ~/example/Challenge_data.vcf --verbose --outpath /path/to/outfolder/Challenge_data.ann.vcf --all --simple_output /path/to/outfolder/Challenge_data.ann.csv`
 
 
 ## 1.7. Authors
