@@ -14,12 +14,26 @@ from dpcontracts import require, ensure
 import numpy as np
 
 # load the csq data
-cwd = pathlib.Path(__file__).parent.absolute()
-csq_data = os.path.join(cwd, 'csq_order.txt')
-if os.path.isfile(csq_data) is False:
-    raise RuntimeError(f"{csq_data} does not point to the ordered vep impacts")
-    sys.exit()
-csq_pd = pd.read_csv(csq_data)
+csq_order = ["transcript_ablation","splice_acceptor_variant",
+             "splice_donor_variant","stop_gained","frameshift_variant",
+             "stop_lost","start_lost","initiator_codon_variant",
+             "transcript_amplification", "inframe_insertion", 
+             "inframe_deletion","missense_variant",
+             "protein_altering_variant","splice_region_variant",
+             "incomplete_terminal_codon_variant","stop_retained_variant",
+             "synonymous_variant","coding_sequence_variant",
+             "mature_miRNA_variant","5_prime_UTR_variant",
+             "3_prime_UTR_variant","non_coding_transcript_exon_variant",
+             "non_coding_exon_variant","intron_variant",
+             "NMD_transcript_variant","non_coding_transcript_variant",
+             "nc_transcript_variant","upstream_gene_variant",
+             "downstream_gene_variant","TFBS_ablation",
+             "TFBS_amplification","TF_binding_site_variant",
+             "regulatory_region_ablation","regulatory_region_amplification",
+             "feature_elongation","regulatory_region_variant",
+             "feature_truncation","intergenic_variant"]
+
+csq_pd = pd.DataFrame({'csq_order': csq_order})
 csq_pd.reset_index(inplace=True)
 csq_pd.set_index('csq_order', inplace=True)
 

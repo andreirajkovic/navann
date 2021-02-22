@@ -19,7 +19,7 @@ There isn't much required in terms of pre-requistes, besides an internet connect
 
 clone the repo to your local machine
 cd into the directory of the cloned repo and install with:
-`python setup.py install`
+`pip3 install . -r requirements.txt`
 
 ## 1.3. Running the tests
 
