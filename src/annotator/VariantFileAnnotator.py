@@ -9,7 +9,6 @@ import subprocess
 import sys
 import argparse
 import requests
-import pathlib
 from dpcontracts import require, ensure
 import numpy as np
 
